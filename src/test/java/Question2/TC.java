@@ -17,6 +17,7 @@ public class TC {
         WebElement dropdown = Util.driver.findElement(By.xpath("//select[@name='example_length']"));
         Util.dropDown(dropdown, "100");
 
+        System.out.println("Ascending Verification");
         Util.headers(By.xpath("//th[.='Engine']"));
         Util.ascending(By.className("sorting_1"));
         Util.headers(By.xpath("//th[.='Browser']"));
@@ -30,6 +31,7 @@ public class TC {
 
         System.out.println("\n");
 
+        System.out.println("Descending Verification");
         Util.headers(By.xpath("//th[.='Engine']"));
         Util.descending(By.className("sorting_1"));
         Util.hardWait(1);

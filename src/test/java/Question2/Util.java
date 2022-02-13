@@ -17,41 +17,40 @@ import java.util.*;
 public class Util {
 
     public static WebDriver driver;
-    public static void setup (String url){
+
+    public static void setup(String url) {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get(url);
     }
 
-    public static void dropDown(WebElement element,String text){
+    public static void dropDown(WebElement element, String text) {
         Select select = new Select(element);
         select.selectByVisibleText(text);
         try {
             Thread.sleep(1000);
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    public static void ascending(By element){
+    public static void ascending(By element) {
         List<WebElement> list = Util.driver.findElements(element);
-        ArrayList<String> original = new ArrayList<String >();
+        ArrayList<String> original = new ArrayList<String>();
 
-        for (WebElement each : list){
+        for (WebElement each : list) {
             original.add(each.getText());
         }
-        ArrayList<String> sorted = new ArrayList<String >();
-        for (WebElement each1 : list){
+        ArrayList<String> sorted = new ArrayList<String>();
+        for (WebElement each1 : list) {
             sorted.add(each1.getText());
         }
         Collections.sort(sorted);
-        System.out.println(sorted);
         boolean asc = original.equals(original);
 
-        if (asc == true){
+        if (asc == true) {
             System.out.println("Verification Succesfull!");
-        }else
+        } else
             System.out.println("Verification Failed!");
 
     }
@@ -60,15 +59,15 @@ public class Util {
         Thread.sleep(wait * 1000);
     }
 
-    public static void closeBrowser(){
+    public static void closeBrowser() {
         driver.quit();
     }
 
-    public static void headers(By element){
+    public static void headers(By element) {
         List<WebElement> header = driver.findElements(element);
 
         ArrayList<String> original = new ArrayList<String>();
-        for (WebElement each : header){
+        for (WebElement each : header) {
 
             original.add(each.getText());
         }
@@ -80,25 +79,24 @@ public class Util {
         List<WebElement> list = Util.driver.findElements(element);
         List<String> original = new ArrayList<>();
 
-        for (WebElement each : list){
+        for (WebElement each : list) {
             original.add(each.getText());
         }
         List<String> sorted = new ArrayList<>();
-        for (WebElement each1 : list){
+        for (WebElement each1 : list) {
             sorted.add(each1.getText());
         }
 
-        Collections.sort(sorted, Collator.getInstance(Locale.getDefault()));
+        Collections.sort(sorted, Collator.getInstance(Locale.US));
         Collections.reverse(sorted);
 
-        System.out.println(sorted);
         boolean asc = original.equals(original);
 
-        if (asc == true){
+        if (asc == true) {
             System.out.println("Verification Succesfull!");
-        }else
+        } else
             System.out.println("Verification Failed!");
 
     }
-    }
+}
 
