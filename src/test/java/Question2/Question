@@ -1,0 +1,8 @@
+Task 2. Please write a selenium test with Java or any other programming languages you preferred to verify if the
+data table is sorted by columns (Engine, Browser, Platform, etc.) properly
+The data table can be found in https://common.olemiss.edu/_js/datatables/examples/data_sources/js_array.html
+Test Scenario
+1. Launch browser & go to
+https://common.olemiss.edu/_js/datatables/examples/data_sources/js_array.html
+2. Sorting the table by column headers
+3. Verify the sorting functionality in table (ASC & DESC)

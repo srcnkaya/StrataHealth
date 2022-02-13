@@ -1,0 +1,3 @@
+Task 3. Selenium WebDriver
+Create a generic method to toggle a checkbox on a web page.
+The method will need to take the parameters of: String xpathToCheckbox, boolean select
